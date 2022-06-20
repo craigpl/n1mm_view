@@ -507,7 +507,6 @@ def draw_map(size, qsos_by_section):
 
     # color pos:   0          1          2          3          4          5          6          7          8
     # Green palette: 6 levels
-    # mycolors = ['#000000', '#bdffa4', '#90cc74', '#6ab155', '#2e7b1f', '#005600', '#002f00']
     # mycolors = ['#000000', '#bdffa4', '#90cc74', '#6ab155', '#2e7b1f', '#005600', '#003100']
 
     # Yellow to Red color palette: 8 levels
@@ -516,31 +515,10 @@ def draw_map(size, qsos_by_section):
     # Yellow to Red color palette: 7 levels
     mycolors = ['#000000', '#f0fe51', '#fef001', '#ffce03', '#fd9a01', '#fd5904', '#f00505', '#7c0a01']
 
-    # Yellow to Red - try 2 -- 6 colors
-    #                       lt yel                gold       org        org/red    red        maroon
-    mycolors = ['#000000', '#fcfe7f', '#fef001', '#fdae1c', '#fd5904', '#f00505', '#7c0a01']
-    mycolors = ['#000000', '#f0f279',            '#f2a71b', '#fd5904', '#f00000', '#780807', '#380400']
-
-    mycolors = ['#000000', '#fcfe7f', '#f0fe51', '#fef001', '#fdae1c', '#fd5904', '#f01a02', '#f00505', '#990909', '#610801'] # darken 9, drop 7, less grn #2
-    mycolors = ['#000000', '#f0f279', '#f0fe51', '#fef600', '#fdae1c', '#fd5904', '#f01a02', '#990909', '#540600']
-    #                       lt yel                yel        gold       org        org/red    red        maroon
-    mycolors = ['#000000', '#f0f279',            '#fef600', '#f2a71b', '#fd5904', '#f00000', '#780807', '#380400'] # this is pretty good
-
-    # color pos:   0          1          2          3          4          5          6          7          8
-    mycolors = ['#000000', '#fef001',            '#ffce03', '#fd9a01', '#fd6104', '#ff2c05', '#f00505', '#780807'] # scheme color's yel to red
-    mycolors = ['#000000', '#fef001',            '#ffce03', '#fd9a01', '#fd6104', '#ff0d00', '#bb0404', '#780807'] # kinda don't like dark red after red
-    mycolors = ['#000000', '#f0f279', '#fef001', '#ffce03', '#fd9a01', '#fb6203', '#eb3a13', '#e00505', '#ff0000'] # 
-    # color                 lt yel     yel        gold                             red        maroon
-    mycolors = ['#000000', '#f0f279', '#fef001', '#ffce03', '#fd9a01', '#fb6203', '#e00505', '#380400'] # 
-    mycolors = ['#000000', '#f0f279', '#fef001', '#ffce03', '#fd9a01', '#fb6203', '#ff3838', '#e00505', '#380400'] # what if I add a lighter red?
-    mycolors = ['#000000', '#f0f279',            '#fef600', '#f2a71b', '#fd5904', '#f00000', '#780807', '#380400'] # this is pretty good
-    ranges = [0, 1, 4, 9, 14, 19, 24, 29, 100]  # , 500]  # , 1000]  # 8 colors
-    ranges = [0, 1, 4, 9, 19, 29, 100]  # , 500]  # , 1000]  # 6 colors
-    mycolors = ['#000000', '#bdffa4', '#90cc74', '#6ab155', '#2e7b1f', '#005600', '#002f00']
-    mycolors = ['#000000', '#fcfe7f', '#fef001', '#fdae1c', '#fd5904', '#f00505', '#7c0a01']
-
-    mycolors = ['#000000', '#fcfe7f', '#e6d930', '#fdae1c', '#fd5904', '#e00505', '#7c0a01']
+    # Yellow to Red color palette: 6 levels
+    #                       lt yel     yellow     gold       org        red        maroon
     mycolors = ['#000000', '#fcfe7f', '#fff135', '#fdae1c', '#fd5904', '#e00505', '#7c0a01']
+
 
     for section_name in CONTEST_SECTIONS.keys():
         qsos = qsos_by_section.get(section_name)
