@@ -500,8 +500,10 @@ def draw_map(size, qsos_by_section):
     ax.text(0.83, 0,datetime.datetime.utcnow().strftime("%d %b %Y %H:%M %Zz"),
                transform = ax.transAxes,style='italic', size=14,color='white')
     # rng pos:0  1  2  3  4   5   6   7   8   9
-    ranges = [0, 1, 2, 3, 4, 5, 10, 20, 50, 100]  # , 500]  # , 1000]
+    # ranges = [0, 1, 2, 3, 4, 5, 10, 20, 50, 100]  # , 500]  # , 1000]
+    # ranges for my Field Day
     ranges = [0, 1, 4, 9, 19, 29, 100]  # , 500]  # , 1000]
+
     num_colors = len(ranges)
     color_palette = matplotlib.cm.viridis(np.linspace(0.33, 1, num_colors + 1))
 
@@ -510,10 +512,12 @@ def draw_map(size, qsos_by_section):
     # mycolors = ['#000000', '#bdffa4', '#90cc74', '#6ab155', '#2e7b1f', '#005600', '#003100']
 
     # Yellow to Red color palette: 8 levels
+    # colors:                 lt yel                                                 org        red        maroon
     # mycolors = ['#000000', '#fcfe7f', '#f0fe51', '#fef001', '#ffce03', '#fd9a01', '#fd5904', '#f00505', '#7c0a01']
 
     # Yellow to Red color palette: 7 levels
-    mycolors = ['#000000', '#f0fe51', '#fef001', '#ffce03', '#fd9a01', '#fd5904', '#f00505', '#7c0a01']
+    # colors:                 lt yel                                      org        red        maroon
+    # mycolors = ['#000000', '#f0fe51', '#fef001', '#ffce03', '#fd9a01', '#fd5904', '#f00505', '#7c0a01']
 
     # Yellow to Red color palette: 6 levels
     #                       lt yel     yellow     gold       org        red        maroon
@@ -541,8 +545,10 @@ def draw_map(size, qsos_by_section):
             if shape is None:
                 break
             shape.attributes['name'] = section_name
-            ##- section_color = 'k' if color_index == 0 else color_palette[color_index]
 
+            # section_color = 'k' if color_index == 0 else color_palette[color_index]
+
+            # override section color
             """
             if section_name == "ND":
                 color_index = 1
@@ -584,22 +590,13 @@ def draw_map(size, qsos_by_section):
                 color_index = len(mycolors) - 1
             """
 
-            ##- if color_index > 0:
-                ##- pprint("color_index:   " + str(color_index))
-
-            if color_index >= len(mycolors):
-                color_index = len(mycolors) - 1
-
             section_color = mycolors[color_index]
-            ##- # if color_index > 0:
-                ##- # pprint("section_name:  " + section_name)
-                ##- # pprint("section_color: " + section_color)
-                ##- # print("")
+
             ax.add_geometries([shape.geometry], projection, linewidth=0.7, edgecolor="w", facecolor=section_color)
 
     # show terminator
-    ##- date = datetime.datetime.utcnow()  # this might have some timezone problems?
-    ##- ax.add_feature(nightshade.Nightshade(date, alpha=0.5))
+    date = datetime.datetime.utcnow()  # this might have some timezone problems?
+    ax.add_feature(nightshade.Nightshade(date, alpha=0.5))
 
     # show QTH marker
     ax.plot(QTH_LONGITUDE, QTH_LATITUDE, '.', color='r')
