@@ -556,7 +556,7 @@ def draw_map(size, qsos_by_section):
 
             # section_color = 'k' if color_index == 0 else color_palette[color_index]
 
-            # override section color
+            # override section color for testing colors
             """
             if section_name == "ND":
                 color_index = 1
@@ -586,14 +586,6 @@ def draw_map(size, qsos_by_section):
                 color_index = 10
             if section_name == "WI":
                 color_index = 11
-            if section_name == "ONN":
-                color_index = 1
-            if section_name == "ONE":
-                color_index = 2
-            if section_name == "ONS":
-                color_index = 3
-            if section_name == "GTA":
-                color_index = 4
             if color_index >= len(mycolors):
                 color_index = len(mycolors) - 1
             """
