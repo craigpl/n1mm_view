@@ -17,7 +17,10 @@ EVENT_START_TIME = datetime.datetime.strptime('2022-06-25 18:00:00', '%Y-%m-%d %
 EVENT_END_TIME = datetime.datetime.strptime('2022-06-26 17:59:59', '%Y-%m-%d %H:%M:%S')
 """ port number used by N1MM+ for UDP broadcasts This matches the port you set in N1MM Configurator UDP logging """
 N1MM_BROADCAST_PORT = 12060
-""" broadcast IP address, used by log re-player. This could be the IP of the N1MM master, or just the last address in the network segment """
+""" 
+broadcast IP address, used by log re-player. 
+This could be the IP of the N1MM master, or just the last address in the network segment 
+"""
 N1MM_BROADCAST_ADDRESS = '192.168.1.255'
 """ n1mm+ log file name used by replayer """
 # N1MM_LOG_FILE_NAME = 'MyClubCall-2019.s3db'
@@ -33,7 +36,10 @@ QTH_LATITUDE = 41.849030
 QTH_LONGITUDE = -93.804940
 """ number of seconds before automatic display change to the next screen """
 DISPLAY_DWELL_TIME = 6
-""" number of seconds before automatic info recalculation from database. Too low makes the Pi work harder. Too high makes a lag in viewing your results. """
+"""
+number of seconds before automatic info recalculation from database. Too low makes the Pi work harder.
+Too high makes a lag in viewing your results.
+"""
 DATA_DWELL_TIME = 60
 """ log level for apps -- one of logging.WARN, logging.INFO, logging.DEBUG """
 LOG_LEVEL = logging.WARN
