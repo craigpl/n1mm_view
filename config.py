@@ -11,12 +11,10 @@ DATABASE_FILENAME = 'n1mm_view.db'
 EVENT_NAME = 'Field Day'
 """ start time of the event/contest in YYYY-MM-DD hh:mm:ss format """
 # EVENT_START_TIME = datetime.datetime.strptime('2019-06-25 18:00:00', '%Y-%m-%d %H:%M:%S')
-# EVENT_START_TIME = datetime.datetime.strptime('2021-06-26 18:00:00', '%Y-%m-%d %H:%M:%S')
 EVENT_START_TIME = datetime.datetime.strptime('2022-06-25 18:00:00', '%Y-%m-%d %H:%M:%S')
 """ end time of the event/contest """
 # EVENT_END_TIME = datetime.datetime.strptime('2019-06-26 17:59:59', '%Y-%m-%d %H:%M:%S')
-# EVENT_END_TIME = datetime.datetime.strptime('2021-06-27 17:59:59', '%Y-%m-%d %H:%M:%S')
-EVENT_END_TIME = datetime.datetime.strptime('2012-06-26 17:59:59', '%Y-%m-%d %H:%M:%S')
+EVENT_END_TIME = datetime.datetime.strptime('2022-06-26 17:59:59', '%Y-%m-%d %H:%M:%S')
 """ port number used by N1MM+ for UDP broadcasts This matches the port you set in N1MM Configurator UDP logging """
 N1MM_BROADCAST_PORT = 12060
 """ 
@@ -29,9 +27,13 @@ N1MM_BROADCAST_ADDRESS = '192.168.1.255'
 N1MM_LOG_FILE_NAME = 'MyClubCall-2020.s3db'
 """ QTH here is the location of your event. We mark this location with a red dot when we generate the map views."""
 """ QTH Latitude """
-QTH_LATITUDE = 34.0109629
+""" CRAIG: QTH_LATITUDE = 44.857849 """
+""" FRANK: QTH_LATITUDE = 41.849030 """
+QTH_LATITUDE = 41.849030
 """ QTH Longitude """
-QTH_LONGITUDE = -84.4616047
+""" CRAIG: QTH_LONGITUDE = -93.486585 """
+""" FRANK: QTH_LONGITUDE = -93.804940 """
+QTH_LONGITUDE = -93.804940
 """ number of seconds before automatic display change to the next screen """
 DISPLAY_DWELL_TIME = 6
 """
