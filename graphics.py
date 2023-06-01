@@ -499,28 +499,36 @@ def draw_map(size, qsos_by_section):
     
     ax.text(0.83, 0,datetime.datetime.utcnow().strftime("%d %b %Y %H:%M %Zz"),
                transform = ax.transAxes,style='italic', size=14,color='white')
-    # rng pos:0  1  2  3  4   5   6   7   8   9
+
+    # Hardcoded ranges and colors
+    #
+    # Given a range of [0,1,4,9], sections with counts of 2-4 fall into the 3rd position (ie, range[2])
+    # and then would use the color in the same position.
+    # Make sure the highest count for a section is not > the last number in Ranges.
+
+    # Ranges for a Field Day where the highest count per section is just over 29.
+    # rng pos:  0  1  2  3  4  5  6   7   8   9
     # ranges = [0, 1, 2, 3, 4, 5, 10, 20, 50, 100]  # , 500]  # , 1000]
-    # ranges for my Field Day
-    ranges = [0, 1, 4, 9, 19, 29, 100]  # , 500]  # , 1000]
+    ranges = [0, 1, 4, 9, 19, 29, 500]
 
     num_colors = len(ranges)
     color_palette = matplotlib.cm.viridis(np.linspace(0.33, 1, num_colors + 1))
 
     # color pos:   0          1          2          3          4          5          6          7          8
     # Green palette: 6 levels
+    # colors:      black      lt green   sage       olive      lime       forest     evergreen
     # mycolors = ['#000000', '#bdffa4', '#90cc74', '#6ab155', '#2e7b1f', '#005600', '#003100']
 
     # Yellow to Red color palette: 8 levels
-    # colors:                 lt yel                                                 org        red        maroon
+    # colors:      black      dusty yel  lt yellow  yellow     mustard    apricot    orange     red        maroon
     # mycolors = ['#000000', '#fcfe7f', '#f0fe51', '#fef001', '#ffce03', '#fd9a01', '#fd5904', '#f00505', '#7c0a01']
 
     # Yellow to Red color palette: 7 levels
-    # colors:                 lt yel                                      org        red        maroon
+    # colors:      black      lt yellow  yellow     mustard    apricot    orange     red        maroon
     # mycolors = ['#000000', '#f0fe51', '#fef001', '#ffce03', '#fd9a01', '#fd5904', '#f00505', '#7c0a01']
 
     # Yellow to Red color palette: 6 levels
-    #                       lt yel     yellow     gold       org        red        maroon
+    #              black      lt yel     yellow     gold       orange     red        maroon
     mycolors = ['#000000', '#fcfe7f', '#fff135', '#fdae1c', '#fd5904', '#e00505', '#7c0a01']
 
 
