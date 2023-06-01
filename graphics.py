@@ -502,7 +502,7 @@ def draw_map(size, qsos_by_section):
 
     # Hardcoded ranges and colors
     #
-    # Given a range of [0,1,4,9], sections with counts of 2-4 fall into the 3rd position (ie, range[2])
+    # Given a range of [0,1,4,9], sections with counts of 2-4 fall into the 3rd position (ie, ranges[2])
     # and then would use the color in the same position.
     # Make sure the highest count for a section is not > the last number in Ranges.
 
